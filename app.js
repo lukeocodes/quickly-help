@@ -6,9 +6,7 @@ const port = 3000
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.get('/', (req, res) => {
-  res.render('index', { title: 'Express' });
-});
+app.use('/', require('./routes/index.js'));
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
